@@ -1,0 +1,30 @@
+web.xml : 웹 환경 설정
+	pro04\src\main\webapp\WEB-INF에 위치
+pom.xml : 의존성 라이브러리 설정(모든 필요한 jar를 로딩하여 Maven Repository에 저장)
+	pro04 에 위치
+root-context.xml : 데이터 설정
+	pro04\src\main\webapp\WEB-INF\spring 에 위치
+	pom.xml에서 로딩한 라이브러리의 클래스대로 데이터베이스에 대한 설정을 진행하고,
+	dataSource에 선택한 데이터베이스 정보를 등록하며,
+	해당 데이터베이스와 테이블 생성 필수
+mybatis-config.xml : root-context.xml의 내용대로 mybatis에 대한 설정
+	pro04\src\main\resources 에 위치
+	DTD에 configuration 임을 선언하고, configuration의 태그에 typeAliases로 package를 지정
+*Mapper.xml : mybatis-config.xml의 내용대로 Mapping(JDBC에 sql 명령으로 변환되어 처리) 설정
+	pro04\src\main\resources\mappers 에 위치
+	DTD에 Mapper임을 선언하고, mapper로 namespace를 해당 테이블 이름과 같게 지정하며,
+	그 안에 select, insert, update, delete 태그를 기입하며, 속성으로는 호출될 메소드이름과 같은 id를 지정하고,
+	데이터베이스로 부터 반환되는 resultType 속성을 지정하고, 해당 DTO나 VO 생성 필수
+servlet-context.xml : 서블릿(controller)에서 접근 가능한 자원(파일/디렉토리)에 대한 설정
+	pro04\src\main\webapp\WEB-INF\spring\appServlet 에 위치
+	servlet에서 resolve 되는 디렉토리에 대한 내용을 기술하고, 해당 디렉토리는 생성 필수
+	요청 주소의 앞과 뒤에 붙여 줄 내용을 기술
+log4j.xml : 현재 spring에 접근하는 모든 정보를 콘솔 창에 출력하는 부분을 설정
+	pro04\src\main\resources 에 위치
+	콘솔 창에 출력되는 로그와 그 레벨을 설정(해당 패키지를 전부 지정할 것)
+log4jdbc.log4j2.properties : Slf4와 log4j 의 연동 클래스 지정
+	pro04\src\main\resources 에 위치
+	log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
+logback.xml : 로그 정보를 수집하여 백업하게 되는 부분을 설정
+	pro04\src\main\resources 에 위치
+	로그를 백업하는 로그파일 규격과 백업할 내용, 삭제되는 주기를 설정

@@ -1,0 +1,17 @@
+https://spring.io/tools
+
+개발통합환경(IDE)
+	
+	JDK 8, no MVC + Postgres
+	JDK 8, MVC Level 2 + Oracle
+	JDK 8, MVC Level 2 + Service + MySQL
+	JDK 8, Spring MVC + MariaDB + MyBatis
+
+
+	Spring Legacy Project  -> Spring MVC Project
+	Sts3 -> 별도 설치 필요 없음
+	Sts4 -> Web Tools, MVC Tools 별도 설치 필요
+	VSCode -> Java, Maven, MVC Tools 별도 설치 필요
+
+	Spring Starter Project -> Spring Boot Project
+	Sts4 -> 최소 자바 버전 1.8 이상

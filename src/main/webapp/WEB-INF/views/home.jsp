@@ -8,6 +8,7 @@
 	<title>쇼핑몰</title>
 </head>
 <body>
+<a href="notice/list.do">목록</a>
 <h1>
 	Hello world!  
 </h1>
